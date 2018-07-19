@@ -1,6 +1,6 @@
 .star-background {
   height: 500px;
-  background: radial-gradient(ellipse at bottom, #0a00b6 0%, #b47cff 100%);
+  background: radial-gradient(ellipse at top, #0a00b6 0%, #b47cff 100%);
   overflow: hidden;
 }
 

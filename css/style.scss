@@ -1,32 +1,87 @@
-body{
+$primary-color: #7c4dff;
+$light-color: #b47cff;
+$dark-color: #3f1dcb;
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-.lobster{
-    font-family: 'Lobster', cursive;
+.s-font {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.my-navbar{
-    background-color: transparent;
+.my-navbar {
+    background:$dark-color;
+    .navbar-nav{
+        .nav-link{
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-size: 1.2rem;
+        }
+    }
 }
 
-.star-background{
+.separator{
+    height: 1px;
+    background: white;
+}
+
+.star-background {
     position: relative;
-    .star-title{
+    .star-title {
         color: white;
-        font-size: 6rem;
         width: 100%;
         text-align: center;
         position: absolute;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
+        .name {
+            font-size: 4.5rem;
+        }
+        .title {
+            font-size: 1.5rem;
+        }
+        .avatar {
+            .img-avatar {
+                border-radius: 50%;
+                border: 3px solid white;
+                width: 150px;
+            }
+        }
     }
 }
 
-.my-section{
+.my-section {
     padding: 20px 0;
-    .title{
+    .title {
         text-align: center;
     }
+}
+
+.about {}
+
+.primary-hvr.hvr-ripple-out:before {
+    border: $primary-color solid 6px;
+}
+
+.info-name {
+    font-size: 2.5rem;
+    color: $primary-color;
+}
+
+.primary {
+    border: $primary-color solid 6px;
+}
+
+.primary-color{
+    color: $primary-color
+}
+
+.card-box {
+    cursor: pointer;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.info-card {
+    height: 250px;
 }
