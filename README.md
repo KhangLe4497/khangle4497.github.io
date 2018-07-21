@@ -1,2 +1,3 @@
-# khangle4497.github.io
-KhangLe4497's personal website
+# Nguyen-Khang Le's personal website
+
+Visit at https://lekhang4497.github.io/
