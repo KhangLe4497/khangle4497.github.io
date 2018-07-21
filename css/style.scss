@@ -1,6 +1,8 @@
+@import 'ribbon';
 $primary-color: #7c4dff;
 $light-color: #b47cff;
 $dark-color: #3f1dcb;
+$bg-light: #d1c4e9;
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -31,10 +33,14 @@ body {
 
 .skill-box {
     .img-wrapper {
-        width: 90px;
+        max-width: 90px;
         height: 90px;
         margin: auto;
     }
+}
+
+.primary-light-bg {
+    background: $bg-light;
 }
 
 .star-background {
@@ -68,11 +74,6 @@ body {
     .title {
         text-align: center;
     }
-    &.primary-bg {
-        .title {
-            color: white;
-        }
-    }
 }
 
 .primary-hvr.hvr-ripple-out:before {
@@ -84,7 +85,7 @@ body {
     color: $primary-color;
 }
 
-.primary {
+.primary-border {
     border: $primary-color solid 6px;
 }
 
@@ -128,9 +129,35 @@ body {
     }
 }
 
+.my-card-title {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.skill-ribbon {
+    @extend .ribbon-1;
+    position: absolute;
+    left: auto;
+    right: 20px;
+}
+
+.social-icon {
+    color: $primary-color;
+    margin-bottom: 1rem;
+    i{
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+    &:hover {
+        color: $dark-color;
+        text-decoration: none;
+    }
+}
+
 // Responsive
 @media only screen and (max-width: 768px) {
-    .skill-box{
+    .skill-box {
         width: 100%;
     }
 }
