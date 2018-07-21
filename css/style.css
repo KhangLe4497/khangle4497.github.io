@@ -192,6 +192,42 @@ body {
   text-decoration: none;
 }
 
+.org .org-header .org-icon {
+  background: #7c4dff;
+  width: 64px;
+  height: 64px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.org .org-header .org-icon i {
+  font-size: 2rem;
+}
+
+.org .org-header .org-image {
+  width: 80px;
+  height: 80px;
+}
+
+.org .org-header .org-name {
+  font-size: 1.5rem;
+}
+
+.org .org-content .content-header {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
 @media only screen and (max-width: 768px) {
   .skill-box {
     width: 100%;

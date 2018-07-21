@@ -109,10 +109,7 @@
     <section class="my-section primary-bg">
         <div class="container">
             <h2 class="title s-font text-light" style="margin-bottom: 4rem">MY SKILLS</h2>
-            <div id="handlebars-skill">
-
-            </div>
-            <!-- <div class="card shadow-box-1">
+            <div class="card shadow-box-1">
                 <div class="skill-ribbon d-md-block d-none"></div>
                 <div class="card-body">
                     <h3 class="my-card-title">HTML</h3>
@@ -150,6 +147,13 @@
                                     <div class="text-center mt-2">HTML5</div>
                                 </div>
                             </div>
+
+                            <!-- <div class="skill-box mb-4">
+                                        <div class="img-wrapper">
+                                            <img class="img-fluid" src="images/skills/handlebars.png" alt="HTML">
+                                        </div>
+                                        <div class="text-center mt-2">Handlebars</div>
+                                    </div> -->
                         </div>
                     </div>
                     <h4 class="my-card-title">CSS</h4>
@@ -187,10 +191,18 @@
                                     <div class="text-center mt-2">HTML5</div>
                                 </div>
                             </div>
+
+                            <!-- <div class="skill-box mb-4">
+                                            <div class="img-wrapper">
+                                                <img class="img-fluid" src="images/skills/handlebars.png" alt="HTML">
+                                            </div>
+                                            <div class="text-center mt-2">Handlebars</div>
+                                        </div> -->
                         </div>
                     </div>
+
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
     <section class="my-section">
@@ -348,32 +360,6 @@
         </div>
     </div>
 </body>
-<script id="skill-template" type="text/x-handlebars-template">
-    {{#each skillSections}}
-    <div class="card shadow-box-1 mb-5">
-        <div class="skill-ribbon d-md-block d-none"></div>
-        <div class="card-body">
-            {{#each this}}
-            <h3 class="my-card-title">{{this.name}}</h3>
-            <div class="mb-4">
-                <div class="row">
-                    {{#each this.skills}}
-                    <div class="col-md-2 col-4">
-                        <div class="skill-box mb-4 mx-auto">
-                            <div class="img-wrapper">
-                                <img class="img-fluid" src="{{this.image}}" alt="{{this.name}}">
-                            </div>
-                            <div class="text-center mt-2">{{this.name}}</div>
-                        </div>
-                    </div>
-                    {{/each}}
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    {{/each}}
-</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
@@ -383,9 +369,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
 <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src="js/modal.js"></script>
-<script>
-    var skillSource = document.getElementById("skill-template").innerHTML;
-    var skillTemplate = Handlebars.compile(skillSource);
+<!-- <script>
+    var source = document.getElementById("index-template").innerHTML;
+    var template = Handlebars.compile(source);
     var context = {
         title: "My New Post",
         body: "This is my first post!"
@@ -416,29 +402,21 @@
     }, {
         name: 'SASS',
         image: 'images/skills/sass.png'
-    }, {
+    },{
         name: 'Bootstrap',
         image: 'images/skills/bootstrap.png'
-    }, {
+    },{
         name: 'Materialize',
         image: 'images/skills/materialize.png'
-    }];
-
-    var skillSections = [
-        [{
-            name: 'HTML',
-            skills: html5
-        }, {
-            name: 'CSS',
-            skills: css3
-        }]
-    ]
-    var skillContent = skillTemplate({
+    }]
+    var htmlContent = template({
         story: story,
-        skillSections: skillSections
+        skills: {
+            html5: html5,
+            css3: css3,
+        }
     });
-    console.log(skillContent);
-    $('#handlebars-skill').html(skillContent);
-</script>
+    $('body').append(htmlContent);
+</script> -->
 
 </html>

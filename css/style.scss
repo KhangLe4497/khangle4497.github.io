@@ -145,13 +145,45 @@ body {
 .social-icon {
     color: $primary-color;
     margin-bottom: 1rem;
-    i{
+    i {
         font-size: 2rem;
         margin-right: 1rem;
     }
     &:hover {
         color: $dark-color;
         text-decoration: none;
+    }
+}
+
+.org {
+    .org-header {
+        .org-icon {
+            background: $primary-color;
+            width: 64px;
+            height: 64px;
+            color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 2rem;
+            }
+        }
+        .org-image{
+            width: 80px;
+            height: 80px;
+        }
+        .org-name{
+            font-size: 1.5rem;
+        }
+    }
+    .org-content{
+        .content-header{
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+            text-transform: uppercase;
+        }
     }
 }
 
