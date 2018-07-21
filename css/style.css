@@ -6,6 +6,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.primary-bg {
+  background: #7c4dff;
+}
+
 .my-navbar {
   background: #3f1dcb;
 }
@@ -19,6 +23,12 @@ body {
 .separator {
   height: 1px;
   background: white;
+}
+
+.skill-box .img-wrapper {
+  width: 90px;
+  height: 90px;
+  margin: auto;
 }
 
 .star-background {
@@ -51,11 +61,15 @@ body {
 }
 
 .my-section {
-  padding: 20px 0;
+  padding: 100px 0;
 }
 
 .my-section .title {
   text-align: center;
+}
+
+.my-section.primary-bg .title {
+  color: white;
 }
 
 .primary-hvr.hvr-ripple-out:before {
@@ -76,11 +90,10 @@ body {
 }
 
 .card-box {
+  background: white;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   cursor: pointer;
-  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .card-box:hover {
@@ -93,6 +106,11 @@ body {
 
 .card-box:hover .info-card .bg-img {
   opacity: 1;
+}
+
+.shadow-box-1 {
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .info-card {
@@ -113,5 +131,11 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+  .skill-box {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

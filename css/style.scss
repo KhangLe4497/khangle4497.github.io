@@ -9,10 +9,14 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.primary-bg {
+    background: $primary-color;
+}
+
 .my-navbar {
-    background:$dark-color;
-    .navbar-nav{
-        .nav-link{
+    background: $dark-color;
+    .navbar-nav {
+        .nav-link {
             font-family: 'Montserrat', sans-serif;
             color: white;
             font-size: 1.2rem;
@@ -20,9 +24,17 @@ body {
     }
 }
 
-.separator{
+.separator {
     height: 1px;
     background: white;
+}
+
+.skill-box {
+    .img-wrapper {
+        width: 90px;
+        height: 90px;
+        margin: auto;
+    }
 }
 
 .star-background {
@@ -52,13 +64,16 @@ body {
 }
 
 .my-section {
-    padding: 20px 0;
+    padding: 100px 0;
     .title {
         text-align: center;
     }
+    &.primary-bg {
+        .title {
+            color: white;
+        }
+    }
 }
-
-.about {}
 
 .primary-hvr.hvr-ripple-out:before {
     border: $primary-color solid 6px;
@@ -73,18 +88,18 @@ body {
     border: $primary-color solid 6px;
 }
 
-.primary-color{
+.primary-color {
     color: $primary-color
 }
 
 .card-box {
+    background: white;
     transition: all 0.5s;
     cursor: pointer;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    &:hover{
-        .info-card{
+    &:hover {
+        .info-card {
             color: white;
-            .bg-img{
+            .bg-img {
                 opacity: 1;
             }
         }
@@ -92,12 +107,16 @@ body {
     }
 }
 
+.shadow-box-1 {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
 .info-card {
     transition: all 0.5s;
     position: relative;
     overflow: hidden;
     height: 250px;
-    .bg-img{
+    .bg-img {
         transition: all 0.5s;
         opacity: 0;
         height: 100%;
@@ -107,5 +126,11 @@ body {
         left: 0;
         z-index: -1;
     }
-    
+}
+
+// Responsive
+@media only screen and (max-width: 768px) {
+    .skill-box{
+        width: 100%;
+    }
 }
