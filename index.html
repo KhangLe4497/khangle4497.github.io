@@ -10,8 +10,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/animate_background.css" />
     <link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css">
@@ -55,65 +54,35 @@
                     </a>
                 </li>
                 <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#">Story
+                    <a class="nav-link" href="#story">Story
                     </a>
                 </li>
                 <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#">Skills
+                    <a class="nav-link" href="#skills">Skills
                     </a>
                 </li>
                 <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#">Contact
+                    <a class="nav-link" href="#contact">Contact
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <section class="about my-section bg-light">
+    <section class="about my-section bg-light" id="story">
         <div class="container-fluid">
             <h2 class="title s-font mb-5">MY STORY</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card-box hvr-ripple-out primary-hvr w-100 mb-4 shadow-box-1 eduTrigger">
-                        <div class="d-flex justify-content-center align-items-center info-card primary-border flex-column info-name">
-                            <img class="bg-img" src="images/bg-1.jpg">
-                            <i class="fas fa-graduation-cap mb-2"></i>
-                            <h3 class="text-center s-font">
-                                Education</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-box hvr-ripple-out primary-hvr w-100 mb-4 shadow-box-1 workTrigger">
-                        <div class="d-flex justify-content-center align-items-center info-card primary-border flex-column info-name">
-                            <img class="bg-img" src="images/bg-2.jpg">
-                            <i class="fas fa-graduation-cap mb-2"></i>
-                            <h3 class=" text-center s-font">
-                                Work experience</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-box hvr-ripple-out primary-hvr w-100 mb-4 shadow-box-1">
-                        <div class="d-flex justify-content-center align-items-center info-card primary-border flex-column info-name">
-                            <img class="bg-img" src="images/bg-3.jpg">
-                            <i class="fas fa-graduation-cap mb-2"></i>
-                            <h3 class=" text-center s-font">
-                                Certificate & award</h3>
-                        </div>
-                    </div>
-                </div>
+            <div id="handlebars-story">
             </div>
         </div>
     </section>
-    <section class="my-section primary-bg">
+    <section class="my-section primary-bg" id="skills">
         <div class="container">
             <h2 class="title s-font text-light" style="margin-bottom: 4rem">MY SKILLS</h2>
             <div id="handlebars-skill">
             </div>
         </div>
     </section>
-    <section class="my-section">
+    <section class="my-section" id="contact">
         <h2 class="title s-font">CONTACT ME</h2>
         <div class="d-flex flex-wrap align-items-center mt-5 flex-column">
             <a class="social-icon d-flex align-items-center" href="">
@@ -268,6 +237,22 @@
         </div>
     </div>
 </body>
+<script id="story-template" type="text/x-handlebars-template">
+    <div class="row">
+        {{#each story}}
+        <div class="col-md-4">
+            <div class="card-box hvr-ripple-out primary-hvr w-100 mb-4 shadow-box-1 {{this.triggerClass}}">
+                <div class="d-flex justify-content-center align-items-center info-card primary-border flex-column info-name">
+                    <img class="bg-img" src="{{this.background}}">
+                    <i class="{{this.iconClass}} mb-2"></i>
+                    <h3 class="text-center s-font">
+                        {{this.name}}</h3>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</script>
 <script id="skill-template" type="text/x-handlebars-template">
     {{#each skillSections}}
     <div class="card shadow-box-1 mb-5">
@@ -302,129 +287,55 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
 <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
-<script src="js/modal.js"></script>
+<script src="js/bindingSkill.js"></script>
+<script src="js/bindingStory.js"></script>
 <script>
-    var skillSource = document.getElementById("skill-template").innerHTML;
-    var skillTemplate = Handlebars.compile(skillSource);
-    var context = {
-        title: "My New Post",
-        body: "This is my first post!"
-    };
-    var story = [{
-        name: 'Education',
-        iconClass: 'fas fa-graduation-cap',
-        background: 'images/bg-1.jpg'
-    }, {
-        name: 'Work experience',
-        iconClass: 'fas fa-graduation-cap',
-        background: 'images/bg-2.jpg'
-    }, {
-        name: 'Certificates & awards',
-        iconClass: 'fas fa-graduation-cap',
-        background: 'images/bg-3.jpg'
-    }];
-    var html5 = [{
-        name: 'HTML',
-        image: 'images/skills/html5.png'
-    }, {
-        name: 'Handlebars',
-        image: 'images/skills/handlebars.png'
-    }];
-    var css3 = [{
-        name: 'CSS',
-        image: 'images/skills/css3.png'
-    }, {
-        name: 'SASS',
-        image: 'images/skills/sass.png'
-    }, {
-        name: 'Bootstrap',
-        image: 'images/skills/bootstrap.png'
-    }, {
-        name: 'Materialize',
-        image: 'images/skills/materialize.png'
-    }];
-    var javascript = [{
-        name: 'Javascript',
-        image: 'images/skills/javascript.png'
-    }, {
-        name: 'jQuery',
-        image: 'images/skills/jquery.png'
-    }, {
-        name: 'Angular',
-        image: 'images/skills/angular.png'
-    }, {
-        name: 'Ionic',
-        image: 'images/skills/ionic.png'
-    }];
-    var android = [{
-        name: 'Android Studio',
-        image: 'images/skills/androidstudio.png'
-    }]
-    var other = [{
-        name: 'Github',
-        image: 'images/skills/github.png'
-    }, {
-        name: 'Heroku',
-        image: 'images/skills/heroku.png'
-    }, {
-        name: 'Photoshop',
-        image: 'images/skills/photoshop.png'
-    }];
-    var backend = [{
-        name: 'Java',
-        image: 'images/skills/java.png'
-    }, {
-        name: 'NodeJS',
-        image: 'images/skills/nodejs.png'
-    }, {
-        name: 'ExpressJS',
-        image: 'images/skills/expressjs.png'
-    }, {
-        name: 'MySQL',
-        image: 'images/skills/mysql.png'
-    }, {
-        name: 'MongoDB',
-        image: 'images/skills/mongodb.png'
-    }];
-    var otherLanguage = [{
-        name: 'C++',
-        image: 'images/skills/cpp.png'
-    }, {
-        name: 'C#',
-        image: 'images/skills/csharp.png'
-    }];
-
-    var skillSections = [
-        [{
-            name: 'HTML',
-            skills: html5
-        }, {
-            name: 'CSS',
-            skills: css3
-        }, {
-            name: 'Javascript',
-            skills: javascript
-        }, {
-            name: 'Android',
-            skills: android
-        }],
-        [{
-            name: 'Backend',
-            skills: backend
-        }, {
-            name: 'Other languages',
-            skills: otherLanguage
-        }],
-        [{
-            name: 'Other',
-            skills: other
-        }]
-    ]
-    var skillContent = skillTemplate({
-        story: story,
-        skillSections: skillSections
-    });
-    $('#handlebars-skill').html(skillContent);
+    $(function () {
+        bindingStory();
+        bindingSkills();
+    })
 </script>
+
+<script>
+    // Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+
+
+<script src="js/modal.js"></script>
 
 </html>
