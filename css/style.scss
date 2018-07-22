@@ -150,6 +150,7 @@ body {
 }
 
 .social-icon {
+    transition: all 0.5s;
     color: $primary-color;
     margin-bottom: 1rem;
     i {
@@ -159,6 +160,14 @@ body {
     &:hover {
         color: $dark-color;
         text-decoration: none;
+    }
+}
+
+.normal-anchor{
+    color: black;
+    &:hover{
+        text-decoration: none;
+        color: black;
     }
 }
 
@@ -198,5 +207,16 @@ body {
 @media only screen and (max-width: 768px) {
     .skill-box {
         width: 100%;
+    }
+    .star-background {
+        height: 500px;
+        .star-title {
+            .name {
+                font-size: 1.5rem;
+            }
+            .title {
+                font-size: 1rem;
+            }
+        }
     }
 }

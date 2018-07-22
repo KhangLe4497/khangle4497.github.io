@@ -19,7 +19,7 @@
 
 <body>
 
-    <div class="star-background">
+    <div class="star-background" id="top-page">
         <div id='stars'></div>
         <div id='stars2'></div>
         <div id='stars3'></div>
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark my-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark my-navbar sticky-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,29 +46,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-fill w-100">
                 <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="#top-page" data-toggle="collapse" data-target=".navbar-collapse.show">Home
                     </a>
                 </li>
                 <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#">About
+                    <a class="nav-link" href="#about" data-toggle="collapse" data-target=".navbar-collapse.show">About
                     </a>
                 </li>
                 <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#story">Story
+                    <a class="nav-link" href="#skills" data-toggle="collapse" data-target=".navbar-collapse.show">Skills
                     </a>
                 </li>
                 <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#skills">Skills
-                    </a>
-                </li>
-                <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#contact">Contact
+                    <a class="nav-link" href="#contact" data-toggle="collapse" data-target=".navbar-collapse.show">Contact
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <section class="about my-section bg-light" id="story">
+    <section class="about my-section bg-light" id="about">
         <div class="container-fluid">
             <h2 class="title s-font mb-5">MY STORY</h2>
             <div id="handlebars-story">
@@ -82,25 +78,59 @@
             </div>
         </div>
     </section>
+    <section class="my-section bg-light">
+        <h2 class="title s-font">CONTACT ME</h2>
+        <div class="container">
+
+            <div class="card-deck mt-5">
+                <a class="card shadow-box-1 border-0 normal-anchor" href="https://github.com/lekhang4497/HKShopWebsite" target="_blank">
+                    <img class="card-img-top" src="images/project/hkshop.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">HKShop Website</h5>
+                        <p class="card-text">Full-stack responsive shopping website project written in NodeJS and Handlebars view engine. Using
+                            MongooseJS, PassportJS, check out in Paypal sandbox, ... and many other features.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">github.com/lekhang4497/HKShopWebsite</small>
+                    </div>
+                </a>
+                <a class="card shadow-box-1 border-0 normal-anchor" href="https://github.com/lekhang4497/HKBookApp" target="_blank">
+                    <img class="card-img-top" src="images/project/hkbook.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">HKBook App</h5>
+                        <p class="card-text">An application that helps users to recognize books from their covers or ISBN code. Using Microsoft
+                            Azure Vision API for text recognition and Goodreads API for getting book informations. It also
+                            provides book management using Firebase Realtime Database.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">github.com/lekhang4497/HKBookApp</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
     <section class="my-section" id="contact">
         <h2 class="title s-font">CONTACT ME</h2>
         <div class="d-flex flex-wrap align-items-center mt-5 flex-column">
-            <a class="social-icon d-flex align-items-center" href="">
+            <p class="social-icon d-flex align-items-center">
                 <i class="fas fa-envelope"></i> lekhang4497@gmail.com
-            </a>
-            <a class="social-icon d-flex align-items-center" href="">
+            </p>
+            <p class="social-icon d-flex align-items-center">
                 <i class="fab fa-facebook"></i>facebook.com/lekhang4497
-            </a>
-            <a class="social-icon d-flex align-items-center" href="">
+            </p>
+            <p class="social-icon d-flex align-items-center">
                 <i class="fab fa-skype"></i>lekhang4497@gmail.com
-            </a>
-            <a class="social-icon d-flex align-items-center" href="">
+            </p>
+            <p class="social-icon d-flex align-items-center">
                 <i class="fab fa-linkedin"></i>linkedin.com/in/le-nguyen-khang
+            </p>
+            <a class="social-icon d-flex align-items-center" href="https://github.com/lekhang4497">
+                <i class="fab fa-github"></i>github.com/lekhang4497
             </a>
         </div>
     </section>
     <footer>
-        <div class="text-center bg-light p-3">
+        <div class="text-center bg-dark p-3 text-light">
             © 2018 Khang-Nguyen Le
         </div>
     </footer>
@@ -236,6 +266,51 @@
             </div>
         </div>
     </div>
+    <!-- Award modal -->
+    <div id="awardModal">
+        <div class="py-5 bg-danger">
+            <div class="container">
+                <div class="org mb-5 rounded shadow-box-1 p-5 bg-white">
+                    <div class="org-header">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="org-icon rounded m-md-0 m-auto shadow-box-1">
+                                    <i class="fas fa-award"></i>
+                                </div>
+
+                            </div>
+                            <div class="col-md-10">
+                                <div class="org-name text-md-left text-center">
+                                    Certificates and Awards
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="org-content">
+                        <h6 class="content-header">AWARDS</h6>
+                        <ul class="pl-4">
+                            <li>
+                                <b>2018</b> - Anduin STEM Scholarship 2018 Award</li>
+                            <li>
+                                <b>2018</b> - EVOLABLE ASIA Scholarship</li>
+                            <li>
+                                <b>2017</b> - Student of 5 merits</li>
+                            <li>
+                                <b>2017</b> - OLP 2017 – Third prize</li>
+                            <li>
+                                <b>2017</b> - Excellent volunteer award (Green Summer Volunteer Campaign)</li>
+                            <li>
+                                <b>2017</b> - Delegate of International Students Science Forum 2017</li>
+                            <li>
+                                <b>2015</b> - City excellent student in Informatics (High school) – Second prize</li>
+                            <li>
+                                <b>2012</b> - City excellent student in Informatics (Secondary school) – First prize</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script id="story-template" type="text/x-handlebars-template">
     <div class="row">
@@ -295,47 +370,7 @@
         bindingSkills();
     })
 </script>
-
-<script>
-    // Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
-        });
-      }
-    }
-  });
-</script>
-
-
+<script src="js/smoothScroll.js"></script>
 <script src="js/modal.js"></script>
 
 </html>

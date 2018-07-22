@@ -192,6 +192,8 @@ body {
 }
 
 .social-icon {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   color: #7c4dff;
   margin-bottom: 1rem;
 }
@@ -204,6 +206,15 @@ body {
 .social-icon:hover {
   color: #3f1dcb;
   text-decoration: none;
+}
+
+.normal-anchor {
+  color: black;
+}
+
+.normal-anchor:hover {
+  text-decoration: none;
+  color: black;
 }
 
 .org .org-header .org-icon {
@@ -245,6 +256,15 @@ body {
 @media only screen and (max-width: 768px) {
   .skill-box {
     width: 100%;
+  }
+  .star-background {
+    height: 500px;
+  }
+  .star-background .star-title .name {
+    font-size: 1.5rem;
+  }
+  .star-background .star-title .title {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

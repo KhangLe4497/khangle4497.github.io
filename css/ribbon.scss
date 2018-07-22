@@ -71,6 +71,8 @@
     }
 }
 
+$ribbon-color-1: #ffd600;
+$ribbon-color-2: #ee583a;
 .ribbon-1 {
     position: relative;
     margin-bottom: 80px;
@@ -81,15 +83,15 @@
     }
     width: 60px;
     height: 100px;
-    background: #ee583a;
+    background: $ribbon-color-2;
     top: -6px;
     left: 25px;
     &:before {
-        @include triangle(6px, darken(#ee583a, 15%), down-left);
+        @include triangle(6px, darken($ribbon-color-2, 15%), down-left);
         right: -6px;
     }
     &:after {
-        @include triangle(60px 30px, transparent #ee583a, up);
+        @include triangle(60px 30px, transparent $ribbon-color-2, up);
         bottom: -30px;
     }
 }
