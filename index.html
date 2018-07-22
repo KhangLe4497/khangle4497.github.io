@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/animate_background.css" />
     <link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css">
+    <link rel="stylesheet" href="node_modules/izimodal/css/iziModal.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -79,31 +79,43 @@
         </div>
     </section>
     <section class="my-section bg-light">
-        <h2 class="title s-font">CONTACT ME</h2>
+        <h2 class="title s-font">PROJECTS</h2>
         <div class="container">
 
             <div class="card-deck mt-5">
-                <a class="card shadow-box-1 border-0 normal-anchor" href="https://github.com/lekhang4497/HKShopWebsite" target="_blank">
+                <a class="card shadow-box-1 border-0 normal-anchor" data-toggle="tooltip" data-placement="top" title="View on github" href="https://github.com/lekhang4497/HKShopWebsite"
+                    target="_blank">
                     <img class="card-img-top" src="images/project/hkshop.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">HKShop Website</h5>
                         <p class="card-text">Full-stack responsive shopping website project written in NodeJS and Handlebars view engine. Using
-                            MongooseJS, PassportJS, check out in Paypal sandbox, ... and many other features.</p>
+                            MongooseJS, PassportJS, check out in Paypal sandbox, and many other features.</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">github.com/lekhang4497/HKShopWebsite</small>
                     </div>
                 </a>
-                <a class="card shadow-box-1 border-0 normal-anchor" href="https://github.com/lekhang4497/HKBookApp" target="_blank">
+                <a class="card shadow-box-1 border-0 normal-anchor" data-toggle="tooltip" data-placement="top" title="View on github" href="https://github.com/lekhang4497/HKBookApp"
+                    target="_blank">
                     <img class="card-img-top" src="images/project/hkbook.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">HKBook App</h5>
                         <p class="card-text">An application that helps users to recognize books from their covers or ISBN code. Using Microsoft
-                            Azure Vision API for text recognition and Goodreads API for getting book informations. It also
-                            provides book management using Firebase Realtime Database.</p>
+                            Azure Vision API, Goodreads API, Google Firebase.</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">github.com/lekhang4497/HKBookApp</small>
+                    </div>
+                </a>
+                <a class="card shadow-box-1 border-0 normal-anchor" data-toggle="tooltip" data-placement="top" title="View on github" href="https://github.com/lekhang4497/lekhang4497.github.io"
+                    target="_blank">
+                    <img class="card-img-top" src="images/project/personal.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Personal website</h5>
+                        <p class="card-text">Fully responsive personal website</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">github.com/lekhang4497/lekhang4497.github.io</small>
                     </div>
                 </a>
             </div>
@@ -355,12 +367,11 @@
     {{/each}}
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
+<script src="node_modules/izimodal/js/iziModal.min.js"></script>
 <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src="js/bindingSkill.js"></script>
 <script src="js/bindingStory.js"></script>
@@ -368,6 +379,7 @@
     $(function () {
         bindingStory();
         bindingSkills();
+        $('[data-toggle="tooltip"]').tooltip();
     })
 </script>
 <script src="js/smoothScroll.js"></script>
