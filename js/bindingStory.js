@@ -8,12 +8,12 @@ function bindingStory() {
         triggerClass: 'eduTrigger'
     }, {
         name: 'Work experience',
-        iconClass: 'fas fa-graduation-cap',
+        iconClass: 'fas fa-briefcase',
         background: 'images/bg-2.jpg',
         triggerClass: 'workTrigger'
     }, {
         name: 'Certificates & awards',
-        iconClass: 'fas fa-graduation-cap',
+        iconClass: 'fas fa-award',
         background: 'images/bg-3.jpg',
         triggerClass: 'awardTrigger'
     }];
